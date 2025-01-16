@@ -454,7 +454,7 @@ require('lazy').setup({
         -- },
         pickers = {
           find_files = {
-            find_command = { 'rg', '--no-require-git' },
+            find_command = { 'rg', '--no-require-git', '--files' },
           },
         },
         extensions = {
