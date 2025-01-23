@@ -153,7 +153,7 @@ vim.opt.wildignore = '.hg,.svn,*~,*.png,*.jpg,*.gif,*.min.js,*.swp,*.o,vendor,di
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -186,6 +186,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 --- except in Rust where the rule is 100 characters
 vim.api.nvim_create_autocmd('Filetype', { pattern = 'rust', command = 'set colorcolumn=100' })
+vim.api.nvim_create_autocmd('Filetype', { pattern = 'javascript', command = 'set colorcolumn=100' })
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -295,7 +296,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
+  'vim-autoformat/vim-autoformat', -- Format code with one button press (or automatically on save).
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -524,7 +525,7 @@ require('lazy').setup({
   {
     'kkoomen/vim-doge',
     config = function()
-      vim.keymap.set('n', '<leader>df', function() end, { desc = '[D]ocument [F]unction' })
+      vim.keymap.set('n', '<leader>df', '<Plug>(doge-generate)', { desc = '[D]ocument [F]unction' })
     end,
   },
   {
@@ -766,7 +767,7 @@ require('lazy').setup({
     ---@module "conform"
     ---@type conform.setupOpts
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional

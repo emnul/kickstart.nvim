@@ -39,6 +39,7 @@
   "tokyonight.nvim": { "branch": "main", "commit": "c2725eb6d086c8c9624456d734bd365194660017" },
   "twilight.nvim": { "branch": "main", "commit": "1584c0b0a979b71fd86b18d302ba84e9aba85b1b" },
   "typescript-tools.nvim": { "branch": "master", "commit": "1edc5dcba8cb46e71feddde91c9c3d4bce77bec5" },
+  "vim-autoformat": { "branch": "master", "commit": "e89c47a89909a69c4b4426a71e99c197adae7a44" },
   "vim-doge": { "branch": "master", "commit": "750d17dcd5a38a6afb51ddd07ee7d3e96bab7e9e" },
   "vim-markdown": { "branch": "master", "commit": "8f6cb3a6ca4e3b6bcda0730145a0b700f3481b51" },
   "vim-matchup": { "branch": "master", "commit": "5fb083de1e06fdd134c6ad8d007d4b5576b25ba7" },
